@@ -8,5 +8,10 @@
   <body>
     Hello World!<br />
     <a href="https://www.pcschool.com.tw/">Gjun</a><br />
+    <script type="module">
+      import hello, { add } from "./math.js";
+      console.log("🚀 ~ hello('Jerry'):", hello("Jerry"));
+      console.log("🚀 ~ add(1,2):", add(1, 2));
+    </script>
   </body>
 </html>
