@@ -9,9 +9,11 @@
     Hello World!<br />
     <a href="https://www.pcschool.com.tw/">Gjun</a><br />
     <script type="module">
-      import hello, { add } from "./math.js";
-      console.log("🚀 ~ hello('Jerry'):", hello("Jerry"));
-      console.log("🚀 ~ add(1,2):", add(1, 2));
+      import * as ut from "./math.js";
+      // console.log("🚀 ~ utils:", ut);
+      // console.log("🚀 ~ hello('Jerry'):", ut.hello("Jerry"));
+      console.log("🚀 ~ add(1,2):", ut.add(1, 2));
+      // console.log("🚀 ~ utils.version:", ut.version);
     </script>
   </body>
 </html>

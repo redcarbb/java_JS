@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title">原始標題</h1>
+
+    <img id="logo" src="" alt="轉圈圈" />
+    <button id="btn">click</button>
+    <script>
+      const title = document.getElementById("title");
+      title.textContent = "新標題"; // 修改純文字
+      title.innerHTML =
+        "<span style='font-weight: bold;'>這段文字是粗體</span>"; // 插入 HTML
+
+      const logo = document.getElementById("logo");
+      logo.src = "18133.png";
+
+      logo.setAttribute("src", "./18133.png");
+      logo.style.width = "200px";
+
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        alert("點到我了");
+      });
+
+      let newSpan = document.createElement("span");
+      newSpan.textContent = "一長串文字";
+      btn.appendChild(newSpan);
+    </script>
+  </body>
+</html>
