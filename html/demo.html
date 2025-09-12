@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    var x = 100;
+
+    function testVarScope() {
+      if (true) {
+        console.log(x); // ✅ 100（仍可存取）
+      }
+    }
+    testVarScope();
+    let y = 200;
+
+    function testLetScope() {
+      if (true) {
+      }
+      console.log(y); // ❌ Error: y is not defined
+    }
+    testLetScope();
+
+    var a = 10;
+    var a = 20; // ❌ SyntaxError: Identifier 'a' has already been declared
+
+    let name = "Jerry";
+    let msg = `Hi! ${name}`;
+    console.log("🚀 ~ msg:", msg);
+
+    let aa;
+    console.log("🚀 ~ aa:", aa);
+
+    let person = {
+      name: "tom",
+      age: 25,
+      is: null,
+    };
+
+    let array = [1, 2, 3];
+    console.log("🚀 ~ array:", array);
+    console.log("🚀 ~ array[0]:", array[0]);
+
+    let arrObj = [
+      { name: "tom", age: 25, is: null },
+      { name: "Jerry", age: 18, is: null },
+    ];
+    console.log("🚀 ~ arrObj:", arrObj);
+  </script>
+</html>

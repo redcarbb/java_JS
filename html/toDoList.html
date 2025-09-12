@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>待辦清單</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+      ul {
+        padding-left: 0;
+      }
+      li {
+        list-style: none;
+        margin: 5px 0;
+      }
+      button {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📋 我的待辦清單</h1>
+
+    <input id="todoInput" placeholder="輸入待辦事項" />
+    <button id="addBtn">加入</button>
+
+    <ul id="todoList"></ul>
+
+    <script>
+      const todoInput = document.getElementById("todoInput");
+      const addBtn = document.getElementById("addBtn");
+      const todoList = document.getElementById("todoList");
+
+      addBtn.addEventListener("click", () => {
+        const text = todoInput.value.trim();
+        if (text) {
+          const li = document.createElement("li");
+          li.textContent = text;
+          const delBtn = document.createElement("button");
+          delBtn.textContent = "刪除";
+
+          delBtn.addEventListener("click", () => {
+            li.remove(); // 移除這個 <li>
+          });
+
+          todoList.appendChild(li);
+          li.appendChild(delBtn);
+
+          todoInput.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>

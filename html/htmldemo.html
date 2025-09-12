@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        background-color: #fafafa;
+        color: #333;
+      }
+
+      h1,
+      h2 {
+        color: #0056b3;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      img {
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        padding: 5px;
+      }
+
+      ul,
+      ol {
+        margin: 10px 0;
+        padding-left: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+
+      table th,
+      table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      table th {
+        background-color: #f2f2f2;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 標題與段落 -->
+    <h1>歡迎來到我的網站</h1>
+    <p>這是一段描述網站內容的文字。</p>
+    <p><strong>加粗文字</strong> 和 <em>斜體文字</em> 的範例。</p>
+
+    <!-- 超連結與圖片 -->
+    <a href="https://www.example.com" target="_blank">點擊這裡訪問 Example</a>
+    <br />
+    <img src="https://picsum.photos/200/100" alt="範例圖片" />
+
+    <!-- 列表 -->
+    <h2>無序列表</h2>
+    <ul>
+      <li>項目一</li>
+      <li>項目二</li>
+      <li>項目三</li>
+    </ul>
+
+    <h2>有序列表</h2>
+    <ol>
+      <li>第一步</li>
+      <li>第二步</li>
+      <li>第三步</li>
+    </ol>
+
+    <!-- 表格 -->
+    <h2>範例表格</h2>
+    <table border="1">
+      <tr>
+        <th>名稱</th>
+        <th>年齡</th>
+      </tr>
+      <tr>
+        <td>小明</td>
+        <td>18</td>
+      </tr>
+      <tr>
+        <td>小華</td>
+        <td>20</td>
+      </tr>
+    </table>
+
+    <!-- 表單 -->
+    <h2>範例表單</h2>
+    <form action="/submit" method="post">
+      <label for="name">姓名：</label>
+      <input type="text" id="name" name="name" />
+      <br />
+      <label for="email">電子郵件：</label>
+      <input type="email" id="email" name="email" />
+      <br />
+      <button type="submit">提交</button>
+    </form>
+  </body>
+</html>

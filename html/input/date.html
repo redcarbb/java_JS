@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/submit" method="post">
+      <label for="date">選擇日期：</label>
+      <input type="date" id="date" name="date2" />
+      <br />
+      <button type="submit">提交</button>
+    </form>
+  </body>
+  <script>
+    const form = document.querySelector("form");
+    console.log("🚀 ~ form:", form);
+    const form2 = document.getElementsByTagName("form");
+    console.log("🚀 ~ form2:", form2);
+
+    const date = document.getElementById("date");
+    console.log("🚀 ~ date:", date);
+
+    const date2 = document.getElementsByName("date2");
+    console.log("🚀 ~ date2:", date2);
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      //日期格式化
+      console.log(date.value);
+      console.log(new Date(date.value));
+      console.log(new Date(date.value).toISOString().split("T")[0]);
+      console.log(new Date(date.value).toLocaleDateString());
+      console.log(new Date(date.value).toLocaleString());
+    });
+  </script>
+</html>
