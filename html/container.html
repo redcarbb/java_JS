@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>客戶詳細資料編輯</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* 使用現代字體 */
+        background-color: #f4f7f6; /* 淺灰色背景 */
+        display: flex; /* 使用 Flexbox 來置中內容 */
+        justify-content: center; /* 水平置中 */
+        align-items: center; /* 垂直置中 */
+        min-height: 100vh; /* 佔滿整個視窗高度 */
+        margin: 0; /* 移除預設邊距 */
+        padding: 20px; /* 內邊距 */
+        box-sizing: border-box; /* 包括內邊距和邊框在內的寬度計算 */
+      }
+      .container {
+        background-color: #ffffff; /* 白色背景 */
+        padding: 30px 40px; /* 內邊距 */
+        border-radius: 10px; /* 圓角邊框 */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 輕微陰影效果 */
+        width: 100%; /* 100% 寬度 */
+        max-width: 550px; /* 最大寬度 */
+      }
+      h1,
+      h2 {
+        color: #333; /* 深色標題 */
+        text-align: center; /* 標題置中 */
+        margin-bottom: 20px; /* 標題下方間距 */
+      }
+      /* 資料項目樣式 */
+      .data-item {
+        display: flex; /* 使用 Flexbox 來排列標籤和輸入框 */
+        align-items: center; /* 垂直置中對齊 */
+        margin-bottom: 15px; /* 每個資料項目的下方間距 */
+      }
+      /* 標籤樣式 */
+      .data-item label {
+        width: 120px; /* 標籤寬度 */
+        font-weight: bold; /* 粗體標籤 */
+        color: #2c3e50; /* 深色標籤 */
+      }
+      /* span 樣式 */
+      .data-item span {
+        flex: 1; /* 讓 span 占據剩餘空間 */
+        padding: 6px 10px; /* 內邊距 */
+        background-color: #f0f0f0; /* 淺灰色背景 */
+        border-radius: 4px; /* 圓角 */
+        color: #555; /* 深灰色文字 */
+      }
+      /* 輸入框樣式 */
+      .data-item input {
+        flex: 1; /* 讓輸入框占據剩餘空間 */
+        padding: 6px 10px; /* 內邊距 */
+        border: 1px solid #ccc; /* 淺灰色邊框 */
+        border-radius: 4px; /* 圓角 */
+        font-size: 1em; /* 字體大小 */
+      }
+      /* 輸入框聚焦時的樣式 */
+      #submitBtn {
+        width: 100%; /* 按鈕寬度 */
+        padding: 10px 20px; /* 內邊距 */
+        font-size: 1em; /* 字體大小 */
+        background-color: #3498db; /* 藍色背景 */
+        color: white; /* 白色文字 */
+        border: none; /* 無邊框 */
+        border-radius: 8px; /* 圓角 */
+        cursor: pointer; /* 鼠標指針變為手形 */
+        margin-top: 20px; /* 上方間距 */
+      }
+      /* 懸停時變深藍色 */
+      #submitBtn:hover {
+        background-color: #2980b9; /* 懸停時變深藍色 */
+      }
+      #result {
+        margin-top: 20px; /* 上方間距 */
+        white-space: pre-wrap; /* 保留空格和換行 */
+        background-color: #ecf0f1; /* 淺灰色背景 */
+        padding: 15px; /* 內邊距 */
+        border-radius: 8px; /* 圓角 */
+        font-size: 0.95em; /* 字體大小 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>客戶詳細資料</h1>
+      <h2>基本資訊</h2>
+      <div class="data-item">
+        <label for="name">姓名：</label>
+        <span id="name"></span>
+      </div>
+      <div class="data-item">
+        <label for="age">年齡：</label>
+        <span id="age"></span>
+      </div>
+      <div class="data-item">
+        <label for="email">電子郵件：</label>
+        <input type="email" id="email" />
+      </div>
+      <div class="data-item">
+        <label for="phone">手機號碼：</label>
+        <input type="tel" id="phone" />
+      </div>
+      <div class="data-item">
+        <label for="birthday">生日：</label>
+        <input type="date" id="birthday" />
+      </div>
+      <div class="data-item">
+        <label for="loyaltyTier">會員等級：</label>
+        <span id="loyaltyTier"></span>
+      </div>
+      <div class="data-item">
+        <label for="points">積分：</label>
+        <input type="number" id="points" />
+      </div>
+      <button id="submitBtn">送出修改</button>
+      <div id="result"></div>
+    </div>
+    <script>
+      // 模擬從伺服器獲取的用戶資料
+      const userdata = {
+        name: "John",
+        age: 30,
+        email: "Kv9lL@example.com",
+        phone: "+886-912-345678",
+        birthday: {
+          year: 1990,
+          month: 1,
+          day: 1,
+        },
+        loyaltyTier: "Gold",
+        points: 1000,
+      };
+
+      // 取出畫面變數
+      const name = document.getElementById("name");
+      const age = document.getElementById("age");
+      const email = document.getElementById("email");
+      const phone = document.getElementById("phone");
+      const birthday = document.getElementById("birthday");
+      const loyaltyTier = document.getElementById("loyaltyTier");
+      const points = document.getElementById("points");
+      const submitBtn = document.getElementById("submitBtn");
+      const result = document.getElementById("result");
+
+      // 賦予值
+      name.textContent = userdata.name;
+      age.textContent = userdata.age;
+      email.value = userdata.email;
+      phone.value = userdata.phone;
+      const birthdayString = `${userdata.birthday.year}-${String(
+        userdata.birthday.month
+      ).padStart(2, "0")}-${String(userdata.birthday.day).padStart(2, "0")}`;
+      birthday.value = birthdayString;
+      loyaltyTier.textContent = userdata.loyaltyTier;
+      points.value = userdata.points;
+
+      submitBtn.addEventListener("click", () => {
+        const [year, month, day] = birthday.value.split("-").map(Number);
+        const updateUserdata = {
+          ...userdata,
+          email: email.value,
+          phone: phone.value,
+          birthday: { year, month, day },
+          points: points.value,
+        };
+        console.log("🚀 ~ updateUserdata:", updateUserdata);
+
+        // 顯示結果
+        document.getElementById("result").innerText =
+          "送出成功！\n\n" + JSON.stringify(updateUserdata, null, 2);
+      });
+    </script>
+  </body>
+</html>

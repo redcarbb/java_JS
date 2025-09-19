@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+
+        // 方法
+        sayHello() {
+          console.log(`嗨，我是 ${this.name}，今年 ${this.age} 歲`);
+        }
+      }
+
+      const p = new Person("Jerry", 15);
+      p.sayHello();
+
+      class Animal {
+        constructor(name) {
+          this.name = name;
+        }
+
+        speak() {
+          console.log(`${this.name} 發出聲音`);
+        }
+      }
+
+      class Dog extends Animal {
+        constructor(name, breed) {
+          super(name); // 呼叫父類別的 constructor
+          this.breed = breed;
+        }
+
+        speak() {
+          console.log(`${this.name}（${this.breed}）：汪汪！`);
+        }
+      }
+
+      const dog = new Dog("阿福", "柴犬");
+      dog.speak();
+
+      class User {
+        constructor(name) {
+          this._name = name;
+        }
+
+        // Getter：取得名字
+        get name() {
+          return this._name;
+        }
+
+        // Setter：設定名字，並加上一些邏輯
+        set name(newName) {
+          if (newName.length < 2) {
+            console.log("❌ 名字太短！");
+          } else {
+            this._name = newName;
+          }
+        }
+      }
+
+      const u = new User("小明");
+      u.name = "阿強";
+      console.log("🚀 ~ u.name:", u.name);
+    </script>
+  </body>
+</html>
