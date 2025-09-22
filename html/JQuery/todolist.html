@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+      <head>
+        <meta charset="UTF-8" />
+        <title>待辦清單</title>
+        <style>
+          body {
+            font-family: sans-serif;
+            padding: 20px;
+          }
+          ul {
+            padding-left: 0;
+          }
+          li {
+            list-style: none;
+            margin: 5px 0;
+          }
+          button {
+            margin-left: 10px;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>📋 我的待辦清單</h1>
+
+        <input id="todoInput" placeholder="輸入待辦事項" />
+        <button id="addBtn">加入</button>
+
+        <ul id="todoList"></ul>
+        <script src="../lib/jquery-3.7.1.min.js"></script>
+        <script>
+          $(document).ready(() => {
+            $("#addBtn").click(() => {
+              const todoInput = $("#todoInput").val().trim();
+              if (todoInput) {
+                const $li = $("<li></li>").text(todoInput);
+                const $delBtn = $("<button></button>").text("刪除");
+                $delBtn.click(() => {
+                  $li.remove();
+                });
+                $li.append($delBtn);
+                $("#todoList").append($li);
+
+                $("#todoInput").val("");
+              }
+            });
+          });
+        </script>
+      </body>
+    </html>
+  </body>
+</html>
