@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const myPromise = new Promise((resolve, reject) => {
+        // 做一些非同步的事情，例如模擬等待
+        setTimeout(() => {
+          const response = false;
+
+          if (response) {
+            resolve("✅ 成功了！");
+          } else {
+            reject("❌ 失敗了！");
+          }
+        }, 2000);
+      });
+
+      myPromise
+        .then((result) => {
+          console.log("成功結果：", result);
+        })
+        .catch((error) => {
+          console.error("錯誤訊息：", error);
+        })
+        .finally(() => {
+          console.log("🔚 無論成功或失敗，這裡一定會執行");
+        });
+
+      const method = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            const res = false;
+            res ? resolve("✅ 資料來了") : reject("執行失敗");
+          }, 1000);
+        });
+      };
+
+      const init = async () => {
+        try {
+          const response = await method();
+          console.log("🚀 ~ init ~ response:", response);
+        } catch (error) {
+          console.log("🚀 ~ init ~ error:", error);
+        }
+      };
+      init();
+    </script>
+  </body>
+</html>
