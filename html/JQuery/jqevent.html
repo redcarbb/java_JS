@@ -86,26 +86,26 @@
             $("#output").html(`選取的性別 : ${checked}`);
           }
         });
+      });
 
-        $('input[name="fruits"]').change(() => {
-          const ckfruits = [];
-          $('input[name="fruits"]:checked').each((index, element) => {
-            ckfruits.push($(element).val());
-            $("#output").html(`勾選的水果項目 : ${ckfruits}`);
-          });
+      $('input[name="fruits"]').change(() => {
+        const ckfruits = [];
+        $('input[name="fruits"]:checked').each((index, element) => {
+          ckfruits.push($(element).val());
+          $("#output").html(`勾選的水果項目 : ${ckfruits}`);
+        });
+      });
+
+      // 取得name="fruits" 點擊的值
+      $("#getCheckedFruits").click(() => {
+        const fruits = [];
+        $("input[name=fruits]:checked").each((index, fruit) => {
+          fruits.push($(fruit).val());
         });
 
-        // 取得name="fruits" 點擊的值
-        $("#getCheckedFruits").click(() => {
-          const fruits = [];
-          $("input[name=fruits]:checked").each((index, fruit) => {
-            fruits.push($(fruit).val());
-          });
-
-          $("#output").html(
-            "你選擇的水果：" + (fruits.length ? fruits.join(", ") : "沒有選擇")
-          );
-        });
+        $("#output").html(
+          "你選擇的水果：" + (fruits.length ? fruits.join(", ") : "沒有選擇")
+        );
       });
     </script>
   </body>

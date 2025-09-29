@@ -40,7 +40,7 @@
     <br /><br />
     <button id="submitBtn">登入</button>
     <script>
-      const CorrectPSW = "123456";
+      const CorrectPSW = "1234567";
 
       $("#submitBtn").click(() => {
         const psw = $("#password");
@@ -53,11 +53,7 @@
           psw.addClass("error");
           emsg.text("密碼至少需 6 個字元");
           emsg.show();
-        } else if (pswval !== CorrectPSW) {
-          psw.addClass("error");
-          emsg.text("密碼錯誤");
-          emsg.show();
-        } else {
+        } else if (pswval === CorrectPSW) {
           psw.removeClass("error");
           emsg.hide();
           alert("登入成功");

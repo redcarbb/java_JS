@@ -99,10 +99,9 @@
 
       $("#filterBtn").click(() => {
         const productList = $("#productList .product");
-        console.log("🚀 ~ productList.eq(0).data():", productList.eq(0).data());
         productList
-          .filter((index, element) => {
-            return parseInt($(element).data("price")) > 1000;
+          .filter(function () {
+            return parseInt($(this).data("price")) > 1000;
           })
           .addClass("price-high");
       });
@@ -113,6 +112,8 @@
           $(element).attr("class", "product");
         });
       });
+
+      
     </script>
   </body>
 </html>
