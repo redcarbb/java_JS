@@ -1,26 +1,23 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
-import PropComponent from './components/PropComponent.vue'
+// import PropComponent from './components/PropComponent.vue'
+// import RefCount from './components/icons/RefCount.vue'
+import ReactiveComp from './components/ReactiveComp.vue'
+import ChangeColor from './components/ChangeColor.vue'
 
-const msgT = "I'm Reid"
+// const msgT = "I'm Reid"
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <!-- <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" /> -->
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-      <PropComponent
-        :msg="msgT"
-        :msgText="'I am'"
-        :age="'12'"
-        :userName="'Jerry'"
-        :defaultUserName="'John'"
-        :propF="{ msg: 'hello' }"
-        :propG="'success'"
-      />
+      <!-- <HelloWorld msg="You do it!" /> -->
+      <!-- <RefCount /> -->
+      <ReactiveComp />
+      <ChangeColor />
     </div>
   </header>
 
