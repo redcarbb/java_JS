@@ -1,10 +1,15 @@
 <script setup>
-// import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue'
+// import ComputedAndMethod from './components/ComputedAndMethod.vue'
 import TheWelcome from './components/TheWelcome.vue'
 // import PropComponent from './components/PropComponent.vue'
 // import RefCount from './components/icons/RefCount.vue'
-import ReactiveComp from './components/ReactiveComp.vue'
-import ChangeColor from './components/ChangeColor.vue'
+// import ReactiveComp from './components/ReactiveComp.vue'
+// import ChangeColor from './components/ChangeColor.vue'
+import ShoppingCart from './components/ShoppingCart.vue'
+import TermsAgreement from './components/TermsAgreement.vue'
+import VbindStyle from './components/VbindStyle.vue'
+import VbindClass from './components/VbindClass.vue'
 
 // const msgT = "I'm Reid"
 </script>
@@ -16,8 +21,13 @@ import ChangeColor from './components/ChangeColor.vue'
     <div class="wrapper">
       <!-- <HelloWorld msg="You do it!" /> -->
       <!-- <RefCount /> -->
-      <ReactiveComp />
-      <ChangeColor />
+      <!-- <ReactiveComp /> -->
+      <!-- <ChangeColor /> -->
+      <!-- <ComputedAndMethod /> -->
+      <!-- <ShoppingCart /> -->
+      <TermsAgreement />
+      <VbindStyle />
+      <VbindClass />
     </div>
   </header>
 
